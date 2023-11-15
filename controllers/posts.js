@@ -52,7 +52,6 @@ function index(req, res) {
     },
   });
 }
-
 /**
  *
  * @param {express.Request} req

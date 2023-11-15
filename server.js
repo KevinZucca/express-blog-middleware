@@ -34,7 +34,6 @@ app.use(errorHandler);
 
 // page not found middleware
 app.use(notFoundRouteMiddleware);
-
 //SERVER LISTEN
 app.listen(port || 8000, () => {
   console.log(`Server is running on port ${port}`);

@@ -4,16 +4,14 @@ const jsonUsers = require("../users.json");
 function login(req, res) {
   const { username, password } = req.body;
   if (!username || !password) {
-    res.status(400).send("Bisogna inserire username e password");
-    return;
+    return res.status(400).send("Bisogna inserire username e password");
   }
 
   const user = jsonUsers.find(
     (user) => user.username == username && user.password == password
   );
   if (!user) {
-    res.status(401).send("Username e/o password errati");
-    return;
+    return res.status(401).send("Username e/o password errati");
   }
 
   const token = generateJWT(user);
