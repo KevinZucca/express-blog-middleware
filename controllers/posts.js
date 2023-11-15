@@ -72,7 +72,7 @@ function show(req, res) {
       }
 
       if (!searchedPost) {
-        res.status(404).send(`Post con slug ${postSlug} non trovato`);
+        throw new Error(`Post con slug ${postSlug} non trovato`);
         return;
       }
       res.type("json").send(searchedPost);
@@ -92,7 +92,7 @@ function create(req, res) {
       res.type("html").send(html);
     },
     default: () => {
-      res.status(406).send("impossibile creare nuovo post");
+      throw new Error("impossibile creare nuovo post");
     },
   });
 }
@@ -130,7 +130,7 @@ function store(req, res) {
 
         res.type("json").send(newPost);
       } else {
-        res.status(406).send("Il post esiste già");
+        throw new Error("Il post esiste già");
       }
     },
   });
@@ -150,11 +150,9 @@ function destroy(req, res) {
       const postSlug = req.params.slug;
       const post = jsonPosts.find((post) => post.slug == postSlug);
       if (post) {
-        res.type("html").send("<strong>Post eliminato</strong>");
-        return;
+        return res.type("html").send("<strong>Post eliminato</strong>");
       } else {
-        res.status(404).send("Post non trovato");
-        return;
+        throw new Error("Post non trovato");
       }
     },
   });
@@ -185,8 +183,7 @@ function findOrFail(req, res) {
   const post = jsonPosts.find((post) => post.slug == postSlug);
 
   if (!post) {
-    res.status(404).send(`Post con slug '${postSlug}' non trovato`);
-    return;
+    throw new Error(`Post con slug '${postSlug}' non trovato`);
   }
 
   return post;
