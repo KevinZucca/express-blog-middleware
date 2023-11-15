@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv").config();
+
 const homeController = require("./controllers/home");
 const aboutController = require("./controllers/about");
 const postRouter = require("./routers/posts");
+const authRouter = require("./routers/auth");
+const adminRouter = require("./routers/admin");
+
 const notFoundRouteMiddleware = require("./middlewares/notFoundRoute");
 const errorHandler = require("./middlewares/errorHandler");
 
@@ -21,6 +25,9 @@ app.get("/", homeController.index);
 app.get("/about", aboutController.index);
 
 app.use("/posts", postRouter);
+
+app.use("/admin", adminRouter);
+app.use("/login", authRouter);
 
 // error handler middleware
 app.use(errorHandler);

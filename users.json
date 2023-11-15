@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Gion Doe",
+        "email": "johndoe@email.com",
+        "password": "password",
+        "username": "giondoe"
+    },
+    {
+        "id": 2,
+        "name": "Jane Doe",
+        "email": "janedoe@email.com",
+        "password": "password",
+        "username": "janedoe"
+    },
+    {
+        "id": 3,
+        "name": "Mario Rossi",
+        "email": "mariorossi@email.com",
+        "password": "password",
+        "username": "mariorossi"
+    },
+    {
+        "id": 4,
+        "name": "Luca Verdi",
+        "email": "lucaverdi@email.com",
+        "password": "password",
+        "username": "lucaverdi"
+    },
+    {
+        "id": 5,
+        "name": "Anna Bianchi",
+        "email": "annabianchi@email.com",
+        "password": "password",
+        "username": "annabianchi"
+    },
+    {
+        "id": 6,
+        "name": "Marco Neri",
+        "email": "marconeri@email.com",
+        "password": "password",
+        "username": "marconeri"
+    },
+    {
+        "id": 7,
+        "name": "Elena Gialli",
+        "email": "elenagialli@email.com",
+        "password": "password",
+        "username": "elenagialli"
+    },
+    {
+        "id": 8,
+        "name": "Giuseppe Azzurri",
+        "email": "giuseppeazzurri@email.com",
+        "password": "password",
+        "username": "giuseppeazzurri"
+    }
+]
