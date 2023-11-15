@@ -4,7 +4,6 @@ const path = require("path");
 const loadNav = require("../utilities/loadNav");
 const jsonPosts = require("../db.json");
 const { kebabCase, update } = require("lodash");
-
 /**
  *
  * @param {express.Request} req
